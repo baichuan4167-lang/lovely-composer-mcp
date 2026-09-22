@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: smoke (${{ matrix.os }}, node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['18', '20', '22']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # The project has no dependencies, so there is nothing to install.
+      - name: Run self-test
+        run: node test/smoke.js
+
+      - name: Exercise the MCP protocol layer end to end
+        shell: bash
+        run: |
+          node src/server.js < test/protocol-probe.jsonl > probe.out 2> probe.err
+          cat probe.err
+          # initialize must answer with a negotiated protocol version
+          grep -q '"protocolVersion"' probe.out
+          # tools/list must advertise the composing tools
+          grep -q '"lc_write_page"' probe.out
+          # an unknown method must produce a JSON-RPC error, not a crash
+          grep -q '"code":-32601' probe.out

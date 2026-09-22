@@ -1,0 +1,8 @@
+{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"probe","version":"1.0"}}}
+{"jsonrpc":"2.0","method":"notifications/initialized"}
+{"jsonrpc":"2.0","id":2,"method":"tools/list"}
+{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"lc_status","arguments":{}}}
+{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"lc_read_song","arguments":{"folder":"LC_SAMPLE_2.0","song":0,"channels":[0],"pages":[1]}}}
+{"jsonrpc":"2.0","id":5,"method":"tools/call","params":{"name":"lc_list_instruments","arguments":{}}}
+{"jsonrpc":"2.0","id":99,"method":"server/discover"}
+{"jsonrpc":"2.0","id":100,"method":"bogus/method"}

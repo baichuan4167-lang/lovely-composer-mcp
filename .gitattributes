@@ -1,0 +1,9 @@
+# Normalize line endings to LF in the repository and in the working tree.
+# Lovely Composer's own CRLF convention is produced by the writer in src/lc.js
+# at runtime and does not depend on how the checkout is configured.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.webp binary
+*.psd binary

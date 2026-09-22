@@ -1,0 +1,22 @@
+# Dependencies (this project is zero-dependency, but keep the door closed)
+node_modules/
+
+# Test / composition scratch output
+.tmp-test/
+.out/
+
+# An unrelated MCP server that happens to live next to this one on the
+# author's machine. Never part of this project.
+photoshop-mcp/
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs and transient files
+*.log
+npm-debug.log*
+*.tmp-*

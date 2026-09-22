@@ -1,0 +1,48 @@
+{
+  "name": "lovely-composer-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol server that lets an AI agent compose chiptune music in Lovely Composer by reading and writing its .jsonl project files.",
+  "main": "src/server.js",
+  "bin": {
+    "lovely-composer-mcp": "src/server.js"
+  },
+  "files": [
+    "src/",
+    "tools/",
+    "compositions/",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node test/smoke.js",
+    "demo": "node test/demo-song.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "lovely-composer",
+    "chiptune",
+    "tracker",
+    "8bit",
+    "game-music",
+    "music-composition",
+    "ai-agent"
+  ],
+  "license": "MIT",
+  "author": "baichuan4167-lang",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baichuan4167-lang/lovely-composer-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/baichuan4167-lang/lovely-composer-mcp/issues"
+  },
+  "homepage": "https://github.com/baichuan4167-lang/lovely-composer-mcp#readme",
+  "dependencies": {}
+}
